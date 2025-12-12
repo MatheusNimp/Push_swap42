@@ -9,16 +9,17 @@
 /*   Updated: 2025/12/09 16:36:42 by maamaral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "operations.h"
+#include "push_swap.h"
 
-void	rr_silent(t_stack *s)
+void rr_silent(t_stack *s)
 {
-	t_page	*last_page;
-	t_page	*pre;
+	t_page *last_page;
+	t_page *pre;
 
-	if (!(s) || s->size < 2)
-		return ;
+	if (!(s) || !(s->page) || s->size < 2)
+		return;
 	last_page = s->page;
+	pre = NULL;
 	while (last_page->next != NULL)
 	{
 		pre = last_page;
@@ -29,19 +30,19 @@ void	rr_silent(t_stack *s)
 	s->page = last_page;
 }
 
-void	rra(t_stack *a)
+void rra(t_stack *a)
 {
 	rr_silent(a);
 	write(1, "rra\n", 4);
 }
 
-void	rrb(t_stack *b)
+void rrb(t_stack *b)
 {
 	rr_silent(b);
 	write(1, "rrb\n", 4);
 }
 
-void	rrr(t_stack *a, t_stack *b)
+void rrr(t_stack *a, t_stack *b)
 {
 	rr_silent(a);
 	rr_silent(b);

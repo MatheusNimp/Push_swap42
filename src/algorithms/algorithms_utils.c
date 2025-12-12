@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack.h                                            :+:      :+:    :+:   */
+/*   algorithms_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maamaral <maamaral@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/09 12:15:38 by maamaral          #+#    #+#             */
-/*   Updated: 2025/12/09 16:41:33 by maamaral         ###   ########.fr       */
+/*   Created: 2025/12/12 10:33:00 by maamaral          #+#    #+#             */
+/*   Updated: 2025/12/12 10:33:00 by maamaral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STACK_H
-#define STACK_H
+#include "push_swap.h"
 
-typedef struct s_page
+int is_sorted(t_stack *s)
 {
-	int value;
-	int index;
-	struct s_page *next;
-} t_page;
+	t_page *current_page;
 
-typedef struct s_stack
-{
-	struct s_page *page;
-	int size;
-} t_stack;
+	if (!(s) || s->size < 2)
+		return (1);
 
-// Initialize the stack
-void init_stack(t_stack *s);
-// Interacts with the stack
-t_page *create_page(int value);
-void add_bottom(t_stack *s, t_page *new_page);
-void free_stack(t_stack *s);
-
-#endif
+	current_page = s->page;
+	while (current_page->next)
+	{
+		if (current_page->value > current_page->next->value)
+			return (0);
+		current_page = current_page->next;
+	}
+	return (1);
+}
