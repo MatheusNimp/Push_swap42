@@ -77,3 +77,17 @@ int get_position(t_stack *s, int index)
 	}
 	return (-1);
 }
+
+void move_to_top(t_stack *s, int pos)
+{
+    if (pos <= s->size / 2)
+    {
+        while (pos-- > 0)
+            ra(s);
+    }
+    else
+    {
+        while (pos++ < s->size)
+            rra(s);
+    }
+}

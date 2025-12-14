@@ -17,9 +17,9 @@ static int get_chunk_size(int size)
 	int chunk;
 
 	if (size <= 100)
-		chunk = size / 7;
+		chunk = size / 5;
 	else
-		chunk = size / 15;
+		chunk = size / 12;
 	if (chunk < 5)
 		chunk = 5;
 	return (chunk);
@@ -29,20 +29,23 @@ static void push_chunks(t_stack *a, t_stack *b)
 {
 	int chunk;
 	int limit;
+	int pushed;
 
 	chunk = get_chunk_size(a->size);
 	limit = chunk;
+	pushed = 0;
 	while (a->size > 0)
 	{
-		if (a->page->index < limit)
+		if (a->page->index <= limit)
 		{
 			pb(a, b);
-			if (b->page->index < limit - (chunk / 2))
+			pushed++;
+			if (b->size > 1 && b->page->index < limit - (chunk / 2))
 				rb(b);
 		}
 		else
 			ra(a);
-		if (b->size == limit)
+		if (pushed == limit)
 			limit += chunk;
 	}
 }

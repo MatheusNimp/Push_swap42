@@ -38,5 +38,5 @@ int is_sorted(t_stack *s);
 int get_min_index(t_stack *s);
 int get_max_index(t_stack *s);
 int get_position(t_stack *s, int index);
-
+void move_to_top(t_stack *s, int pos);
 #endif

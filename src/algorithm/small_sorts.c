@@ -42,6 +42,18 @@ static void sort_three(t_stack *s)
 		rra(s);
 }
 
+/*#include <stdio.h>
+void print_stack(t_stack *s, char *name)
+{
+    t_page *current = s->page;
+    printf("%s: ", name);
+    while (current)
+    {
+        printf("[v:%d i:%d] ", current->value, current->index);
+        current = current->next;
+    }
+    printf("\n");
+}*/
 static void sort_four(t_stack *a, t_stack *b)
 {
 	int min = get_min_index(a);
@@ -64,21 +76,17 @@ static void sort_four(t_stack *a, t_stack *b)
 
 static void sort_five(t_stack *a, t_stack *b)
 {
-	int min;
-	int pos;
-	min = get_min_index(a);
-	pos = get_position(a, min);
-	while (pos--)
-		ra(a);
-	pb(a, b);
-	min = get_min_index(a);
-	pos = get_position(a, min);
-	while (pos--)
-		ra(a);
-	pb(a, b);
-	sort_three(a);
-	pa(a, b);
-	pa(a, b);
+    int pos; 
+   
+    pos = get_position(a, 0);
+    move_to_top(a, pos);
+    pb(a, b);
+    pos = get_position(a, 1);
+    move_to_top(a, pos);
+    pb(a, b);
+    sort_three(a);
+    pa(a, b);
+    pa(a, b);
 }
 
 void small_sorts(t_stack *a, t_stack *b)
