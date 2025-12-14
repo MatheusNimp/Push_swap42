@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   indexing.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maamaral <maamaral@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/14 13:02:05 by maamaral          #+#    #+#             */
-/*   Updated: 2025/12/14 13:02:05 by maamaral         ###   ########.fr       */
+/*   Created: 2025/12/12 10:02:27 by maamaral          #+#    #+#             */
+/*   Updated: 2025/12/12 10:02:27 by maamaral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "push_swap.h"
 
-int main(int argc, char *argv[])
+void indexing(t_stack *s)
 {
-	t_stack a;
-	t_stack b;
+	t_page *current_page;
+	t_page *checker;
+	int counter;
 
-	if (argc < 2)
-		return (0);
-	init_stack(&a);
-	init_stack(&b);
-	parse_args(&a, argc, argv);
-
-	if (is_sorted(&a))
+	current_page = s->page;
+	while (current_page)
 	{
-		free_stack(&a);
-		return (0);
+		checker = s->page;
+		counter = 0;
+		while (checker)
+		{
+			if (current_page->value > checker->value)
+				counter++;
+			checker = checker->next;
+		}
+		current_page->index = counter;
+		current_page = current_page->next;
 	}
-	indexing(&a);
-	if (a.size <= 5)
-		small_sorts(&a, &b);
-	else
-		turkish_sort(&a, &b);
-	free_stack(&a);
-	return (0);
 }
