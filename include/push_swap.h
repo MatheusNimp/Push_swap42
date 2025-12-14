@@ -9,6 +9,7 @@
 /*   Updated: 2025/12/09 10:56:28 by maamaral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 #define PUSH_SWAP_H
 
@@ -24,12 +25,18 @@ long ft_atol(const char *str);
 int is_number(const char *str);
 int check_dup(t_stack *s);
 void error(int n);
-// parsing
+// Parsing
 void parse_args(t_stack *s, int argc, char **argv);
 // Indexing to help on sorts
 void indexing(t_stack *s);
-// Algorithms
-void sort_small(t_stack *a, t_stack *b);
-void sort_big(t_stack *a, t_stack *b);
+// Small sorting algorithm
+void small_sorts(t_stack *a, t_stack *b);
+// Big sorting algorithm
+void turkish_sort(t_stack *a, t_stack *b);
+// Usefull funcions for sorting
+int is_sorted(t_stack *s);
+int get_min_index(t_stack *s);
+int get_max_index(t_stack *s);
+int get_position(t_stack *s, int index);
 
 #endif
