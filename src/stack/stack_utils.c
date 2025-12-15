@@ -6,14 +6,14 @@
 /*   By: maamaral <maamaral@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 22:52:19 by maamaral          #+#    #+#             */
-/*   Updated: 2025/12/09 22:52:19 by maamaral         ###   ########.fr       */
+/*   Updated: 2025/12/15 16:01:19 by maamaral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
 
-t_page *create_page(int value)
+t_page	*create_page(int value)
 {
-	t_page *new_page;
+	t_page	*new_page;
 
 	new_page = malloc(sizeof(t_page));
 	if (!(new_page))
@@ -24,17 +24,17 @@ t_page *create_page(int value)
 	return (new_page);
 }
 
-void add_bottom(t_stack *s, t_page *last)
+void	add_bottom(t_stack *s, t_page *last)
 {
-	t_page *temp_page;
+	t_page	*temp_page;
 
 	if (!(s) || !(last))
-		return;
+		return ;
 	if (!(s->page))
 	{
 		s->page = last;
 		s->size = 1;
-		return;
+		return ;
 	}
 	temp_page = s->page;
 	while (temp_page->next)
@@ -43,12 +43,12 @@ void add_bottom(t_stack *s, t_page *last)
 	s->size++;
 }
 
-void free_stack(t_stack *s)
+void	free_stack(t_stack *s)
 {
-	t_page *temp_page;
+	t_page	*temp_page;
 
 	if (!(s))
-		return;
+		return ;
 	while (s->page)
 	{
 		temp_page = s->page->next;

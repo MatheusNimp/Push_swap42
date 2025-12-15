@@ -6,24 +6,26 @@
 /*   By: maamaral <maamaral@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 23:18:15 by maamaral          #+#    #+#             */
-/*   Updated: 2025/12/12 23:18:15 by maamaral         ###   ########.fr       */
+/*   Updated: 2025/12/15 16:29:00 by maamaral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "push_swap.h"
 
-static void sort_two(t_stack *s)
+static void	sort_two(t_stack *s)
 {
 	if (s->page->value > s->page->next->value)
 		sa(s);
 }
 
-static void sort_three(t_stack *s)
+static void	sort_three(t_stack *s)
 {
-	int x = s->page->value;
-	int y = s->page->next->value;
-	int z = s->page->next->next->value;
+	int	x;
+	int	y;
+	int	z;
 
+	x = s->page->value;
+	y = s->page->next->value;
+	z = s->page->next->next->value;
 	if (x > y && y < z && x < z)
 		sa(s);
 	else if (x > y && y > z)
@@ -54,11 +56,13 @@ void print_stack(t_stack *s, char *name)
     }
     printf("\n");
 }*/
-static void sort_four(t_stack *a, t_stack *b)
+static void	sort_four(t_stack *a, t_stack *b)
 {
-	int min = get_min_index(a);
-	int pos = get_position(a, min);
+	int	min;
+	int	pos;
 
+	min = get_min_index(a);
+	pos = get_position(a, min);
 	if (pos == 1)
 		ra(a);
 	else if (pos == 2)
@@ -68,31 +72,30 @@ static void sort_four(t_stack *a, t_stack *b)
 	}
 	else if (pos == 3)
 		rra(a);
-
 	pb(a, b);
 	sort_three(a);
 	pa(a, b);
 }
 
-static void sort_five(t_stack *a, t_stack *b)
+static void	sort_five(t_stack *a, t_stack *b)
 {
-    int pos; 
-   
-    pos = get_position(a, 0);
-    move_to_top(a, pos);
-    pb(a, b);
-    pos = get_position(a, 1);
-    move_to_top(a, pos);
-    pb(a, b);
-    sort_three(a);
-    pa(a, b);
-    pa(a, b);
+	int	pos;
+
+	pos = get_position(a, 0);
+	move_to_top(a, pos);
+	pb(a, b);
+	pos = get_position(a, 1);
+	move_to_top(a, pos);
+	pb(a, b);
+	sort_three(a);
+	pa(a, b);
+	pa(a, b);
 }
 
-void small_sorts(t_stack *a, t_stack *b)
+void	small_sorts(t_stack *a, t_stack *b)
 {
 	if (is_sorted(a))
-		return;
+		return ;
 	if (a->size == 2)
 		sort_two(a);
 	else if (a->size == 3)

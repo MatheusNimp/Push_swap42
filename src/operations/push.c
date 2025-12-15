@@ -6,17 +6,17 @@
 /*   By: maamaral <maamaral@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 11:32:04 by maamaral          #+#    #+#             */
-/*   Updated: 2025/12/09 11:32:04 by maamaral         ###   ########.fr       */
+/*   Updated: 2025/12/15 16:08:12 by maamaral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
 
-void pa(t_stack *a, t_stack *b)
+void	pa(t_stack *a, t_stack *b)
 {
-	t_page *temp_page;
+	t_page	*temp_page;
 
 	if (b->size == 0)
-		return;
+		return ;
 	temp_page = b->page;
 	b->page = b->page->next;
 	b->size--;
@@ -26,12 +26,12 @@ void pa(t_stack *a, t_stack *b)
 	write(1, "pa\n", 3);
 }
 
-void pb(t_stack *a, t_stack *b)
+void	pb(t_stack *a, t_stack *b)
 {
-	t_page *temp_page;
+	t_page	*temp_page;
 
 	if (a->size == 0)
-		return;
+		return ;
 	temp_page = a->page;
 	a->page = a->page->next;
 	a->size--;

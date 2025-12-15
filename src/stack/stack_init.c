@@ -6,12 +6,12 @@
 /*   By: maamaral <maamaral@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 13:06:29 by maamaral          #+#    #+#             */
-/*   Updated: 2025/12/10 13:06:29 by maamaral         ###   ########.fr       */
+/*   Updated: 2025/12/15 15:59:59 by maamaral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
 
-void init_stack(t_stack *s)
+void	init_stack(t_stack *s)
 {
 	s->page = NULL;
 	s->size = 0;

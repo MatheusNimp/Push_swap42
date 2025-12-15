@@ -6,16 +6,16 @@
 /*   By: maamaral <maamaral@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 20:08:31 by maamaral          #+#    #+#             */
-/*   Updated: 2025/10/15 14:55:28 by maamaral         ###   ########.fr       */
+/*   Updated: 2025/12/15 15:58:50 by maamaral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "utils.h"
 
-static int word_count(char const *s, char c)
+static int	word_count(char const *s, char c)
 {
-	size_t i;
-	int word_c;
-	int in_word;
+	size_t	i;
+	int		word_c;
+	int		in_word;
 
 	word_c = 0;
 	in_word = 0;
@@ -36,10 +36,10 @@ static int word_count(char const *s, char c)
 	return (word_c);
 }
 
-static char *word_add(char const *s, char c)
+static char	*word_add(char const *s, char c)
 {
-	int len;
-	char *word;
+	int		len;
+	char	*word;
 
 	len = 0;
 	while (s[len] && s[len] != c)
@@ -51,16 +51,16 @@ static char *word_add(char const *s, char c)
 	return (word);
 }
 
-static void free_all(char **split, int i)
+static void	free_all(char **split, int i)
 {
 	while (--i >= 0)
 		free(split[i]);
 	free(split);
 }
 
-static char **create_split(char const *s, char c, char **split)
+static char	**create_split(char const *s, char c, char **split)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (*s)
@@ -84,10 +84,10 @@ static char **create_split(char const *s, char c, char **split)
 	return (split);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	char **split;
-	int word_c;
+	char	**split;
+	int		word_c;
 
 	if (!(s))
 		return ((void *)0);

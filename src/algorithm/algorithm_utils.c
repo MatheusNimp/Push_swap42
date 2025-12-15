@@ -6,19 +6,17 @@
 /*   By: maamaral <maamaral@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 10:33:00 by maamaral          #+#    #+#             */
-/*   Updated: 2025/12/12 10:33:00 by maamaral         ###   ########.fr       */
+/*   Updated: 2025/12/15 16:14:26 by maamaral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "push_swap.h"
 
-int is_sorted(t_stack *s)
+int	is_sorted(t_stack *s)
 {
-	t_page *current_page;
+	t_page	*current_page;
 
 	if (!(s) || s->size < 2)
 		return (1);
-
 	current_page = s->page;
 	while (current_page->next)
 	{
@@ -29,10 +27,10 @@ int is_sorted(t_stack *s)
 	return (1);
 }
 
-int get_min_index(t_stack *s)
+int	get_min_index(t_stack *s)
 {
-	int min;
-	t_page *curent_page;
+	int		min;
+	t_page	*curent_page;
 
 	curent_page = s->page;
 	min = curent_page->index;
@@ -45,10 +43,10 @@ int get_min_index(t_stack *s)
 	return (min);
 }
 
-int get_max_index(t_stack *s)
+int	get_max_index(t_stack *s)
 {
-	int max;
-	t_page *curent_page;
+	int		max;
+	t_page	*curent_page;
 
 	curent_page = s->page;
 	max = curent_page->index;
@@ -61,10 +59,10 @@ int get_max_index(t_stack *s)
 	return (max);
 }
 
-int get_position(t_stack *s, int index)
+int	get_position(t_stack *s, int index)
 {
-	int pos;
-	t_page *curent_page;
+	int		pos;
+	t_page	*curent_page;
 
 	pos = 0;
 	curent_page = s->page;
@@ -78,16 +76,16 @@ int get_position(t_stack *s, int index)
 	return (-1);
 }
 
-void move_to_top(t_stack *s, int pos)
+void	move_to_top(t_stack *s, int pos)
 {
-    if (pos <= s->size / 2)
-    {
-        while (pos-- > 0)
-            ra(s);
-    }
-    else
-    {
-        while (pos++ < s->size)
-            rra(s);
-    }
+	if (pos <= s->size / 2)
+	{
+		while (pos-- > 0)
+			ra(s);
+	}
+	else
+	{
+		while (pos++ < s->size)
+			rra(s);
+	}
 }

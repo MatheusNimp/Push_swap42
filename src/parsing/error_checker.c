@@ -6,14 +6,14 @@
 /*   By: maamaral <maamaral@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 15:54:50 by maamaral          #+#    #+#             */
-/*   Updated: 2025/12/10 15:54:50 by maamaral         ###   ########.fr       */
+/*   Updated: 2025/12/15 16:05:57 by maamaral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
 
-int is_number(const char *str)
+int	is_number(const char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
@@ -29,10 +29,10 @@ int is_number(const char *str)
 	return (1);
 }
 
-int check_dup(t_stack *s)
+int	check_dup(t_stack *s)
 {
-	t_page *start_page;
-	t_page *marker;
+	t_page	*start_page;
+	t_page	*marker;
 
 	start_page = s->page;
 	while (start_page)
@@ -49,12 +49,12 @@ int check_dup(t_stack *s)
 	return (1);
 }
 
-void error(int n)
+void	error(int n)
 {
 	if (n == 0)
 	{
 		write(2, "Error\n", 6);
 		exit(1);
 	}
-	return;
+	return ;
 }

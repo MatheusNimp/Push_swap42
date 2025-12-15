@@ -6,17 +6,17 @@
 /*   By: maamaral <maamaral@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 22:13:22 by maamaral          #+#    #+#             */
-/*   Updated: 2025/12/11 22:13:22 by maamaral         ###   ########.fr       */
+/*   Updated: 2025/12/15 15:56:26 by maamaral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "utils.h"
 
-void free_split(char **arr)
+void	free_split(char **arr)
 {
-	int i;
+	int	i;
 
 	if (!(arr))
-		return;
+		return ;
 	i = 0;
 	while (arr[i])
 	{

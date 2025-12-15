@@ -6,17 +6,16 @@
 /*   By: maamaral <maamaral@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 10:02:27 by maamaral          #+#    #+#             */
-/*   Updated: 2025/12/12 10:02:27 by maamaral         ###   ########.fr       */
+/*   Updated: 2025/12/15 16:09:58 by maamaral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "push_swap.h"
 
-void indexing(t_stack *s)
+void	indexing(t_stack *s)
 {
-	t_page *current_page;
-	t_page *checker;
-	int counter;
+	t_page	*current_page;
+	t_page	*checker;
+	int		counter;
 
 	current_page = s->page;
 	while (current_page)

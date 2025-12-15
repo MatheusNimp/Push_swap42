@@ -6,15 +6,14 @@
 /*   By: maamaral <maamaral@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 18:16:19 by maamaral          #+#    #+#             */
-/*   Updated: 2025/12/11 12:22:21 by maamaral         ###   ########.fr       */
+/*   Updated: 2025/12/15 16:05:18 by maamaral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "push_swap.h"
 
-static int jump(const char *str, int *i)
+static int	jump(const char *str, int *i)
 {
-	int sign;
+	int	sign;
 
 	sign = 1;
 	while (str[*i] == ' ' || (str[*i] >= 9 && str[*i] <= 13))
@@ -28,7 +27,7 @@ static int jump(const char *str, int *i)
 	return (sign);
 }
 
-static int overflow_check(long n, int digit, int sign)
+static int	overflow_check(long n, int digit, int sign)
 {
 	if (sign == 1 && (n > (INT_MAX - digit) / 10))
 		return (1);
@@ -37,12 +36,12 @@ static int overflow_check(long n, int digit, int sign)
 	return (0);
 }
 
-long ft_atol(const char *str)
+long	ft_atol(const char *str)
 {
-	int i;
-	long n;
-	int sign;
-	int digit;
+	int		i;
+	long	n;
+	int		sign;
+	int		digit;
 
 	i = 0;
 	n = 0;

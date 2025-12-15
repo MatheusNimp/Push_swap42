@@ -6,14 +6,14 @@
 /*   By: maamaral <maamaral@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 21:18:02 by maamaral          #+#    #+#             */
-/*   Updated: 2025/10/15 21:18:06 by maamaral         ###   ########.fr       */
+/*   Updated: 2025/12/15 15:59:24 by maamaral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "utils.h"
 
-static size_t ft_strlen(const char *str)
+static size_t	ft_strlen(const char *str)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])
@@ -21,9 +21,9 @@ static size_t ft_strlen(const char *str)
 	return (i);
 }
 
-size_t ft_strlcpy(char *dest, const char *src, size_t size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	size_t i;
+	size_t	i;
 
 	if (size == 0)
 		return (ft_strlen(src));
