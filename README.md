@@ -37,7 +37,7 @@ https://www.youtube.com/watch?v=wRvipSG4Mmk&t=599s&pp=ygUScHVzaCBzd2FwIHR1dG9yaW
 AI was used to help research different sorting methods and understand their differences, as well as to clarify questions about project structure.
 
 # Project Structure
-
+```bash
 push_swap/
 ├── push_swap.c
 ├── README.md
@@ -69,3 +69,4 @@ push_swap/
 ├── free_split.c
 ├── ft_split.c
 └── ft_strlcpy.c
+```
