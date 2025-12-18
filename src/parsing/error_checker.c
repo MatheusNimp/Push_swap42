@@ -11,50 +11,34 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
-int	is_number(const char *str)
+int	has_duplicates(t_stack *s)
 {
-	int	i;
+	t_page	*current;
+	t_page	*checker;
 
-	i = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '+' || str[i] == '-')
-		i++;
-	if (str[i] < '0' || str[i] > '9')
+	if (!s || !s->page)
 		return (0);
-	while (str[i] >= '0' && str[i] <= '9')
-		i++;
-	if (str[i] != '\0')
-		return (0);
-	return (1);
-}
-
-int	check_dup(t_stack *s)
-{
-	t_page	*start_page;
-	t_page	*marker;
-
-	start_page = s->page;
-	while (start_page)
+	current = s->page;
+	while (current)
 	{
-		marker = start_page->next;
-		while (marker)
+		checker = current->next;
+		while (checker)
 		{
-			if (start_page->value == marker->value)
-				return (0);
-			marker = marker->next;
+			if (current->value == checker->value)
+				return (1);
+			checker = checker->next;
 		}
-		start_page = start_page->next;
+		current = current->next;
 	}
-	return (1);
+	return (0);
 }
 
-void	error(int n)
+void	error_exit(t_stack *a, char **split)
 {
-	if (n == 0)
-	{
-		write(2, "Error\n", 6);
-		exit(1);
-	}
-	return ;
+	if (split)
+		free_split(split);
+	if (a)
+		free_stack(a);
+	write(2, "Error\n", 6);
+	exit(1);
 }

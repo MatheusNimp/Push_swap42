@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
-void	rotate_silent(t_stack *s)
+static void	rotate_silent(t_stack *s)
 {
 	t_page	*last_page;
 	t_page	*first_page;

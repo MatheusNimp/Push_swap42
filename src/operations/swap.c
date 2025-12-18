@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
-void	swap_silent(t_stack *s)
+static void	swap_silent(t_stack *s)
 {
 	int	temp_value;
 	int	temp_index;

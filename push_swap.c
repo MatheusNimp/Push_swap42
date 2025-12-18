@@ -20,13 +20,12 @@ int	main(int argc, char *argv[])
 		return (0);
 	init_stack(&a);
 	init_stack(&b);
-	parse_args(&a, argc, argv);
+	parse(argc, argv, &a);
 	if (is_sorted(&a))
 	{
 		free_stack(&a);
 		return (0);
 	}
-	indexing(&a);
 	if (a.size <= 5)
 		small_sorts(&a, &b);
 	else

@@ -21,12 +21,11 @@
 # include "utils.h"
 
 // Error checks / ASCII to Long conversion
+int	has_duplicates(t_stack *s);
+void	error_exit(t_stack *a, char **split);
 long	ft_atol(const char *str);
-int		is_number(const char *str);
-int		check_dup(t_stack *s);
-void	error(int n);
 // Parsing
-void	parse_args(t_stack *s, int argc, char **argv);
+void	parse(int argc, char *argv[], t_stack *a);
 // Indexing to help on sorts
 void	indexing(t_stack *s);
 // Small sorting algorithm

@@ -17,7 +17,6 @@
 # include "stack.h"
 
 // swap
-void	swap_silent(t_stack *s);
 void	sa(t_stack *a);
 void	sb(t_stack *b);
 void	ss(t_stack *a, t_stack *b);
@@ -25,12 +24,10 @@ void	ss(t_stack *a, t_stack *b);
 void	pa(t_stack *a, t_stack *b);
 void	pb(t_stack *a, t_stack *b);
 // rotate
-void	rotate_silent(t_stack *s);
 void	ra(t_stack *a);
 void	rb(t_stack *b);
 void	rr(t_stack *a, t_stack *b);
 // reverse rotate
-void	rr_silent(t_stack *s);
 void	rra(t_stack *a);
 void	rrb(t_stack *b);
 void	rrr(t_stack *a, t_stack *b);
