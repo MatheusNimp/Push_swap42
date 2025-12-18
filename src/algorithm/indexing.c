@@ -17,8 +17,6 @@ void	indexing(t_stack *s)
 	t_page	*checker;
 	int		counter;
 
-	if (!s || !s->page)
-		return ;
 	current_page = s->page;
 	while (current_page)
 	{

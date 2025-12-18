@@ -6,7 +6,7 @@
 /*   By: maamaral <maamaral@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:56:28 by maamaral          #+#    #+#             */
-/*   Updated: 2025/12/15 15:50:48 by maamaral         ###   ########.fr       */
+/*   Updated: 2025/12/18 16:00:21 by maamaral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@
 # include "utils.h"
 
 // Error checks / ASCII to Long conversion
-int	has_duplicates(t_stack *s);
-void	error_exit(t_stack *a, char **split);
 long	ft_atol(const char *str);
+int		is_number(const char *str);
+int		check_dup(t_stack *s);
+void	error(int n, char **split, t_stack *s);
 // Parsing
-void	parse(int argc, char *argv[], t_stack *a);
+void	parse_args(t_stack *s, int argc, char *argv[]);
 // Indexing to help on sorts
 void	indexing(t_stack *s);
 // Small sorting algorithm

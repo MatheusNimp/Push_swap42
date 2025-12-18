@@ -6,47 +6,58 @@
 /*   By: maamaral <maamaral@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 19:45:59 by maamaral          #+#    #+#             */
-/*   Updated: 2025/12/15 16:02:50 by maamaral         ###   ########.fr       */
+/*   Updated: 2025/12/18 16:00:54 by maamaral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
 
-static void	parse_arg(char *arg, t_stack *a)
+static void	parse_token(t_stack *s, char *token, char **tokens)
 {
-	char	**split;
-	int		i;
 	long	value;
+	t_page	*new_page;
 
-	split = ft_split(arg, ' ');
-	if (!split)
-		error_exit(a, NULL);
-	i = 0;
-	while (split[i])
-	{
-		value = ft_atol(split[i]);
-		if (value == LONG_MAX)
-			error_exit(a, split);
-		add_bottom(a, create_page((int)value));
-		i++;
-	}
-	free_split(split);
+	if (!(is_number(token)))
+		error(0, tokens, s);
+	value = ft_atol(token);
+	if (value == LONG_MAX)
+		error(0, tokens, s);
+	new_page = create_page((int)value);
+	if (!(new_page))
+		error(0, tokens, 0);
+	add_bottom(s, new_page);
 }
 
-void	parse(int argc, char *argv[], t_stack *a)
+static void	parse_string(t_stack *s, char *arg)
+{
+	char	**tokens;
+	int		i;
+
+	i = 0;
+	tokens = ft_split(arg, ' ');
+	if (!(tokens))
+		error(0, tokens, s);
+	if (tokens[0] == NULL)
+		error(0, tokens, s);
+	while (tokens[i])
+	{
+		parse_token(s, tokens[i], tokens);
+		i++;
+	}
+	free_split(tokens);
+}
+
+void	parse_args(t_stack *s, int argc, char *argv[])
 {
 	int	i;
 
-	if (argc < 2)
-		return ;
-	init_stack(a);
 	i = 1;
 	while (i < argc)
 	{
-		parse_arg(argv[i], a);
+		if (argv[i][0] == '\0')
+			error(0, NULL, s);
+		parse_string(s, argv[i]);
 		i++;
 	}
-	if (has_duplicates(a))
-		error_exit(a, NULL);
-	indexing(a);
+	if (!(check_dup(s)))
+		error(0, NULL, s);
 }
-

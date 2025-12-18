@@ -16,14 +16,13 @@ static int	get_chunk_size(int size)
 	int	chunk;
 
 	if (size <= 100)
-		chunk = size / 7;
+		chunk = 15;
 	else
-		chunk = size / 15;
+		chunk = 30;
 	if (chunk < 5)
 		chunk = 5;
 	return (chunk);
 }
-
 
 static void	push_chunks(t_stack *a, t_stack *b)
 {
@@ -81,4 +80,3 @@ void	turkish_sort(t_stack *a, t_stack *b)
 	push_chunks(a, b);
 	push_back_to_a(a, b);
 }
-

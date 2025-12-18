@@ -6,7 +6,7 @@
 /*   By: maamaral <maamaral@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 11:28:23 by maamaral          #+#    #+#             */
-/*   Updated: 2025/12/15 16:08:53 by maamaral         ###   ########.fr       */
+/*   Updated: 2025/12/18 15:54:52 by maamaral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"

@@ -43,8 +43,6 @@ long	ft_atol(const char *str)
 	int		sign;
 	int		digit;
 
-	if (!str)
-		return (LONG_MAX);
 	i = 0;
 	n = 0;
 	sign = jump(str, &i);

@@ -6,7 +6,7 @@
 /*   By: maamaral <maamaral@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 11:05:23 by maamaral          #+#    #+#             */
-/*   Updated: 2025/12/15 15:48:31 by maamaral         ###   ########.fr       */
+/*   Updated: 2025/12/18 15:55:09 by maamaral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,5 @@ void	rr(t_stack *a, t_stack *b);
 void	rra(t_stack *a);
 void	rrb(t_stack *b);
 void	rrr(t_stack *a, t_stack *b);
+
 #endif
