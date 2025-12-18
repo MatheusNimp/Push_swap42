@@ -3,10 +3,24 @@
 # Push_Swap
 
 ## Description
-Push_Swap is a project from the 42 curriculum designed to test your understanding of algorithms and data manipulation.  
-The goal of the project is to sort a stack of integers in ascending order using a limited set of operations (`sa`, `sb`, `ss`, `pa`, `pb`, `ra`, `rb`, `rr`, `rra`, `rrb`, `rrr`) in the fewest moves possible.  
 
-In this implementation, the **Turkish Sort** algorithm was used to optimize the number of operations. The algorithm intelligently divides and orders elements, ensuring an efficient sorting process even with larger stacks.  
+Push_Swap is a project from the 42 curriculum focused on algorithmic thinking, data structures, and optimization.
+The objective is to sort a stack of integers in ascending order using a restricted set of operations (sa, sb, ss, pa, pb, ra, rb, rr, rra, rrb, rrr) while minimizing the total number of moves.
+
+This implementation uses a Turkish Sort–inspired chunk-based algorithm for medium and large stacks, combined with dedicated optimized routines for small input sizes.
+
+Before sorting, all values are indexed according to their relative order.
+For large stacks, the algorithm:
+
+Divides the indexed values into dynamic chunks based on stack size.
+
+Pushes elements from stack A to stack B chunk by chunk, applying rotations to keep lower indices deeper in stack B.
+
+Pushes elements back to stack A by always selecting and positioning the maximum indexed value in stack B, ensuring efficient reconstruction of the sorted stack.
+
+For small stacks (2 to 5 elements), specialized sorting functions are used to guarantee the minimum number of operations.
+
+This approach provides good performance and scalability while respecting the constraints imposed by the Push_Swap project.
 
 ## Instructions
 ### Compilation
@@ -31,10 +45,13 @@ Resources
 
 42 Push_Swap PDF
  – Official project subject.
-
+```bash
 (https://www.geeksforgeeks.org/dsa/stack-data-structure/)
+
 https://www.youtube.com/watch?v=wRvipSG4Mmk&t=599s&pp=ygUScHVzaCBzd2FwIHR1dG9yaWFs
+
 AI was used to help research different sorting methods and understand their differences, as well as to clarify questions about project structure.
+```
 
 # Project Structure
 ```bash
